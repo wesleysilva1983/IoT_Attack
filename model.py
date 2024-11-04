@@ -3,8 +3,7 @@ import joblib
 import pandas as pd
 
 # Título do aplicativo
-st.title("Predição com o modelo Random Forest")
-st.subheader("Classificação de ataque [Benign, Mirai e Gafgyt]")
+st.subheader("Classificação de ataque RF [Benign, Mirai e Gafgyt]")
 
 # Passo 1: Carregar o modelo salvo
 @st.cache_resource  # Cache para evitar recarregar o modelo a cada execução

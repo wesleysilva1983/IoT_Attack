@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # Configurações do Streamlit
-st.title("Random Forest")
-st.subheader("Loop de treinamento[8x]")
+st.subheader("Modelo Random Forest")
 
 # Caminho local onde estão os arquivos de métricas no Codespaces
 path = "./"  # Ajuste para o diretório atual onde os arquivos estão
