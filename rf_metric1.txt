@@ -1,0 +1,21 @@
+Desempenho do modelo RF:
+Acurácia (Teste): 0.9984
+F1-Score (Teste): 0.9984
+Acurácia (Treino): 0.9983
+F1-Score (Treino): 0.9983
+
+Matriz de Confusão:
+[[37442     0     3]
+ [    0 38286    35]
+ [   67    74 34409]]
+
+Relatório de Classificação:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     37445
+           1       1.00      1.00      1.00     38321
+           2       1.00      1.00      1.00     34550
+
+    accuracy                           1.00    110316
+   macro avg       1.00      1.00      1.00    110316
+weighted avg       1.00      1.00      1.00    110316
