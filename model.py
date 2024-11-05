@@ -26,7 +26,7 @@ file_options = {
 selected_file = st.selectbox("Selecione o arquivo de exemplo", options=["Nenhum"] + list(file_options.keys()))
 
 if selected_file != "Nenhum":
-    st.write("### Classificação esperada:"), st.write(file_options[selected_file])
+    st.write("### Classificação esperada: ",file_options[selected_file])
 
     try:
         # Carregar os dados do arquivo CSV selecionado
