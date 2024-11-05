@@ -16,7 +16,7 @@ rf_classifier_loaded = load_model()
 class_mapping = {0: "Benign", 1: "Attack Mirai", 2: "Attack Gafgyt"}
 
 # Opção 1: Carregar um arquivo CSV personalizado para predição
-st.write("**Opção 1: Ou envie um arquivo CSV personalizado para predições:**")
+st.write("**Opção 1: Envie um arquivo CSV personalizado para predições:**")
 uploaded_file = st.file_uploader("Envie um arquivo CSV para fazer predições", type=["csv"])
 
 if uploaded_file is not None:
