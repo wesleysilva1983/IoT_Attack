@@ -47,7 +47,8 @@ for file_name in metric_files:
 
 # Gerando o boxplot com 'tick_labels' atualizado
 fig, ax = plt.subplots(figsize=(10, 6))
-ax.boxplot(metrics.values(), tick_labels=metrics.keys())
+#ax.boxplot(metrics.values(), tick_labels=metrics.keys())
+ax.boxplot(metrics.values(), tick_labels=metrics.keys(), showmeans=True)
 ax.set_title("Boxplot das Métricas do Modelo")
 ax.set_ylabel("Valores das Métricas")
 ax.set_xticklabels(metrics.keys(), rotation=15)
