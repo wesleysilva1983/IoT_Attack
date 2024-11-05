@@ -61,6 +61,9 @@ st.image("MetricasModelo.png", use_column_width=True)
 # Fonte da imagem centralizada
 st.markdown("<p style='text-align: center;'><strong>Fonte:</strong> Do autor, 2024.</p>", unsafe_allow_html=True)
 
+with open("matriz_confusao.py") as f:
+    exec(f.read())
+
 with open("model.py") as f:
     exec(f.read())
 
