@@ -20,12 +20,22 @@ class_mapping = {0: "Benign", 1: "Attack Mirai", 2: "Attack Gafgyt"}
 def plot_prediction_distribution(predictions):
     # Contar a quantidade de predições por classe
     pred_counts = pd.Series(predictions).value_counts().reindex(class_mapping.values(), fill_value=0)
-    
+
+    # Configuração do estilo do gráfico
+    plt.figure(figsize=(8, 5))
+    sns.set_style("whitegrid")  # Define um estilo de grade leve
+    colors = sns.color_palette("viridis", len(pred_counts))  # Paleta de cores
+
     # Criar o gráfico de barras
     plt.figure(figsize=(6, 4))
     pred_counts.plot(kind='bar')
     plt.ylabel("Quantidade")
     plt.xticks(rotation=45)
+
+    # Exibir os valores no topo das barras
+    for i, v in enumerate(pred_counts):
+        ax.text(i, v + 0.5, str(v), ha='center', va='bottom', fontsize=12, fontweight='bold', color='black')
+
     st.pyplot(plt)
 
 # Opção 1: Carregar um arquivo CSV personalizado para predição
