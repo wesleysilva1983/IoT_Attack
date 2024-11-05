@@ -1,15 +1,5 @@
 import streamlit as st
 
-# Logo alinhada à esquerda no topo da página principal
-st.markdown(
-    """
-    <div style="display: flex; align-items: center;">
-        <img src="LogoUEL.jpg" alt="LogoUEL" width="50" style="margin-right: 100px;">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
 st.markdown("""
 ### Pós-graduação em Ciência da Computação - UEL
 **Projeto:** Detecção de Ataques no Tráfego de Dispositivos IoT.
@@ -33,15 +23,25 @@ texto = """
 st.markdown(texto, unsafe_allow_html=True)
 
 # Título da imagem centralizado
-st.markdown("<p style='text-align: center;'><strong>Arquitetura para coleta de dados</h3>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'><strong>Arquitetura da coleta de dados</h3>", unsafe_allow_html=True)
 # Exibe a imagem
 st.image("Arquitetura.jpg", use_column_width=True)
 # Fonte da imagem centralizada
 st.markdown("<p style='text-align: center;'><strong>Fonte:</strong> Yair Meidan, 2018.</p>", unsafe_allow_html=True)
 
+# Título da imagem centralizado
+st.markdown("<p style='text-align: center;'><strong>Pré Processamento dos Dados</h3>", unsafe_allow_html=True)
+# Exibe a imagem
+st.image("PreProcess.JPG", use_column_width=True)
+# Fonte da imagem centralizada
+st.markdown("<p style='text-align: center;'><strong>Fonte:</strong> Do autor, 2024.</p>", unsafe_allow_html=True)
 
-with open("graphic.py") as f:
-    exec(f.read())
+# Título da imagem centralizado
+st.markdown("<p style='text-align: center;'><strong>Métricas do Modelo - Random Forest </h3>", unsafe_allow_html=True)
+# Exibe a imagem
+st.image("MetricasModelo.png", use_column_width=True)
+# Fonte da imagem centralizada
+st.markdown("<p style='text-align: center;'><strong>Fonte:</strong> Do autor, 2024.</p>", unsafe_allow_html=True)
 
 with open("model.py") as f:
     exec(f.read())
