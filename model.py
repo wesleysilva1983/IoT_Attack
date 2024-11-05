@@ -65,7 +65,7 @@ def process_file(data_file_path):
         labels_data = pd.read_csv(labels_file_path)
         
         if 'Classe' in labels_data.columns:
-            y_true = labels_data['Classe'].values
+            y_true = labels_data['classe'].values
             y_pred = rf_classifier_loaded.predict(data)
             y_pred_mapped = [class_mapping[pred] for pred in y_pred]
             
