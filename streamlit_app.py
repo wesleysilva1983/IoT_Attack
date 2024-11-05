@@ -59,3 +59,12 @@ st.markdown("<p style='text-align: center;'><strong>Fonte:</strong> Do autor, 20
 
 with open("model.py") as f:
     exec(f.read())
+
+st.markdown("""
+**Referência:** 
+
+**N-BaIoT—Network-Based Detection of IoT Botnet Attacks Using Deep Autoencoders.**
+Yair Meidan, Michael Bohadana, Yael Mathov, Yisroel Mirsky, Dominik Breitenbacher, A. Shabtai, Y. Elovici. 2018.
+
+https://arxiv.org/pdf/1805.03409
+""")
