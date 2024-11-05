@@ -111,7 +111,8 @@ if selected_file != "Nenhum":
         
         # Exibir as previsões com os nomes das classes
         st.write("**Classes das predições para o conjunto de dados:**")
-        st.write(y_pred_mapped)
+        pred_counts = pd.Series(y_pred_mapped).value_counts()
+        st.write(pred_counts)
         
         # Exibir gráfico de barras com a distribuição das predições
         st.write("**Gráfico de Distribuição das Predições:**")
