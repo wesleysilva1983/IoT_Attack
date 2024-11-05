@@ -30,9 +30,9 @@ def plot_prediction_distribution(predictions):
     ax = pred_counts.plot(kind='bar', color=colors, edgecolor='black')
     #plt.title("Distribuição das Predições por Classe", fontsize=16, weight='bold')
     #plt.xlabel("Classe", fontsize=14)
-    plt.ylabel("Quantidade", fontsize=14)
-    plt.xticks(rotation=45, fontsize=12)
-    plt.yticks(fontsize=12)
+    plt.ylabel("Quantidade", fontsize=10)
+    plt.xticks(rotation=45, fontsize=10)
+    plt.yticks(fontsize=10)
 
     # Exibir os valores no topo das barras
     for i, v in enumerate(pred_counts):
