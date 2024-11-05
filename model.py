@@ -15,19 +15,31 @@ rf_classifier_loaded = load_model()
 # Mapeamento das classes
 class_mapping = {0: "Benign", 1: "Attack Mirai", 2: "Attack Gafgyt"}
 
-# Passo 2: Carregar o arquivo CSV para predição
-uploaded_file = st.file_uploader("Envie um arquivo CSV para fazer predições", type=["csv"])
+# Passo 2: Selecionar um arquivo CSV pré-definido
+st.write("### Escolha um dos arquivos para fazer predições:")
+file_options = {
+    "IOT_Device_Ennio.csv": "5 Benign e 5 Attack Mirai",
+    "IOT_Device_PT838.csv": "3 Attack Gafgyt - 4 Benign - 4 Attack Mirai",
+    "IOT_Device_SNH1011.csv": "3 Benign - 5 Attack Gafgyt - 3 Attack Mirai"
+}
 
-if uploaded_file is not None:
-    # Passo 3: Ler o arquivo e preparar os dados
-    data = pd.read_csv(uploaded_file)
-    
-    # Verificar se o arquivo tem as colunas corretas
-    st.write("Visualização dos dados carregados:")
-    st.write(data.head())  # Mostra as primeiras linhas do arquivo
-    
-    # Suponha que `data` contenha as colunas necessárias para a predição
+# Criando um seletor de arquivos
+selected_file = st.selectbox("Selecione o arquivo CSV", options=list(file_options.keys()))
+
+# Exibindo a legenda correspondente ao arquivo selecionado
+st.write("### Legenda do arquivo selecionado:")
+st.write(file_options[selected_file])
+
+# Carregar o arquivo selecionado para predição
+if selected_file:
     try:
+        # Carregar os dados do arquivo CSV selecionado
+        data = pd.read_csv(selected_file)
+        
+        # Visualizar as primeiras linhas do arquivo
+        st.write("Visualização dos dados carregados:")
+        st.write(data.head())  # Mostra as primeiras linhas do arquivo
+        
         # Passo 4: Fazer a predição
         y_pred_new = rf_classifier_loaded.predict(data)
         
@@ -57,4 +69,4 @@ if uploaded_file is not None:
         st.write("Erro ao fazer predições. Verifique se o arquivo possui o formato correto.")
         st.write(e)
 else:
-    st.write("Por favor, envie um arquivo CSV para fazer predições.")   
+    st.write("Por favor, selecione um arquivo para fazer predições.")    
