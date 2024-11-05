@@ -58,8 +58,9 @@ if uploaded_file is not None:
         y_pred_mapped = [class_mapping[pred] for pred in y_pred_new]
         
         # Exibir as previsões com os nomes das classes
-        st.write("Predições para o novo conjunto de dados (com nomes das classes):")
-        st.write(y_pred_mapped)
+        st.write("**Classes das predições para o conjunto de dados:**")
+        pred_counts = pd.Series(y_pred_mapped).value_counts()
+        st.write(pred_counts)
         
         # Exibir gráfico de barras com a distribuição das predições
         st.write("**Gráfico de Distribuição das Predições:**")
