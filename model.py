@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Título do aplicativo
 st.subheader("Classificação de ataque RF [Benign, Mirai e Gafgyt]")
@@ -14,6 +15,20 @@ rf_classifier_loaded = load_model()
 
 # Mapeamento das classes
 class_mapping = {0: "Benign", 1: "Attack Mirai", 2: "Attack Gafgyt"}
+
+# Função para exibir gráfico de barras
+def plot_prediction_distribution(predictions):
+    # Contar a quantidade de predições por classe
+    pred_counts = pd.Series(predictions).value_counts().reindex(class_mapping.values(), fill_value=0)
+    
+    # Criar o gráfico de barras
+    plt.figure(figsize=(8, 6))
+    pred_counts.plot(kind='bar')
+    plt.title("Distribuição das Predições por Classe")
+    plt.xlabel("Classe")
+    plt.ylabel("Quantidade")
+    plt.xticks(rotation=45)
+    st.pyplot(plt)
 
 # Opção 1: Carregar um arquivo CSV personalizado para predição
 st.write("**Opção 1: Envie um arquivo CSV personalizado para predições:**")
@@ -36,6 +51,10 @@ if uploaded_file is not None:
         st.write("Predições para o novo conjunto de dados (com nomes das classes):")
         st.write(y_pred_mapped)
         
+        # Exibir gráfico de barras com a distribuição das predições
+        st.write("### Gráfico de Distribuição das Predições:")
+        plot_prediction_distribution(y_pred_mapped)
+        
         # Exibir as previsões junto com os dados de entrada
         result_df = data.copy()
         result_df['Previsão'] = y_pred_mapped
@@ -54,8 +73,6 @@ if uploaded_file is not None:
     except Exception as e:
         st.write("Erro ao fazer predições. Verifique se o arquivo possui o formato correto.")
         st.write(e)
-else:
-    st.write("Ou escolha um dos arquivos de exemplo para fazer predições.")
 
 # Opção 2: Selecionar um arquivo de exemplo pré-definido
 st.write("**Opção 2: Escolha um dos arquivos de exemplo para fazer predições:**")
@@ -85,6 +102,10 @@ if selected_file != "Nenhum":
         # Exibir as previsões com os nomes das classes
         st.write("Classes das predições para o conjunto de dados:")
         st.write(y_pred_mapped)
+        
+        # Exibir gráfico de barras com a distribuição das predições
+        st.write("### Gráfico de Distribuição das Predições:")
+        plot_prediction_distribution(y_pred_mapped)
         
         # Exibir as previsões junto com os dados de entrada
         result_df = data.copy()
