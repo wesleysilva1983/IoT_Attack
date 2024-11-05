@@ -22,10 +22,8 @@ def plot_prediction_distribution(predictions):
     pred_counts = pd.Series(predictions).value_counts().reindex(class_mapping.values(), fill_value=0)
     
     # Criar o gráfico de barras
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(6, 4))
     pred_counts.plot(kind='bar')
-    plt.title("Distribuição das Predições por Classe")
-    plt.xlabel("Classe")
     plt.ylabel("Quantidade")
     plt.xticks(rotation=45)
     st.pyplot(plt)
