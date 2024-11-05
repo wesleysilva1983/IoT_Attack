@@ -52,7 +52,7 @@ if uploaded_file is not None:
         st.write(y_pred_mapped)
         
         # Exibir gráfico de barras com a distribuição das predições
-        st.write("**Gráfico de Distribuição das Predições:**")
+        st.write("Gráfico de Distribuição das Predições:")
         plot_prediction_distribution(y_pred_mapped)
         
         # Exibir as previsões junto com os dados de entrada
