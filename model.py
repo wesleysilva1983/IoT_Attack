@@ -52,7 +52,7 @@ if uploaded_file is not None:
         st.write(y_pred_mapped)
         
         # Exibir gráfico de barras com a distribuição das predições
-        st.write("### Gráfico de Distribuição das Predições:")
+        st.write("**Gráfico de Distribuição das Predições:**")
         plot_prediction_distribution(y_pred_mapped)
         
         # Exibir as previsões junto com os dados de entrada
@@ -92,7 +92,7 @@ if selected_file != "Nenhum":
         data = pd.read_csv(selected_file)
         
         # Visualizar as primeiras linhas do arquivo
-        st.write("Visualização dos dados carregados:")
+        st.write("**Visualização dos dados carregados:**")
         st.write(data.head())  # Mostra as primeiras linhas do arquivo
         
         # Fazer a predição
@@ -100,7 +100,7 @@ if selected_file != "Nenhum":
         y_pred_mapped = [class_mapping[pred] for pred in y_pred_new]
         
         # Exibir as previsões com os nomes das classes
-        st.write("Classes das predições para o conjunto de dados:")
+        st.write("**Classes das predições para o conjunto de dados:**")
         st.write(y_pred_mapped)
         
         # Exibir gráfico de barras com a distribuição das predições
@@ -110,7 +110,7 @@ if selected_file != "Nenhum":
         # Exibir as previsões junto com os dados de entrada
         result_df = data.copy()
         result_df['Previsão'] = y_pred_mapped
-        st.write("Dados com as Predições:")
+        st.write("**Dados com as Predições:**")
         st.write(result_df)
 
         # Permitir download do resultado com previsões
