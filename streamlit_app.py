@@ -12,7 +12,11 @@ st.markdown("""
             
 **Dataset:** N-BaIoT Dataset to Detect IoT Botnet Attacks
 
-**Link:** https://www.kaggle.com/datasets/mkashifn/nbaiot-dataset
+**Link dataset:** https://www.kaggle.com/datasets/mkashifn/nbaiot-dataset
+            
+**Link github:** https://github.com/wesleysilva1983/IoT_Attack
+            
+**Link colab:** https://colab.research.google.com/drive/1iewIPtXoeZc67KuPA0BcsxJdJ28byGgu?usp=sharing
 """)
 
 texto = """
