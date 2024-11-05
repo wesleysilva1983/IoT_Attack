@@ -4,4 +4,6 @@ joblib
 scikit-learn
 seaborn
 numpy
-sklearn.metrics
+sklearn
+confusion_matrix
+classification_report
