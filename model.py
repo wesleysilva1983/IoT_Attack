@@ -27,6 +27,7 @@ def plot_prediction_distribution(predictions):
     colors = sns.color_palette("viridis", len(pred_counts))  # Paleta de cores
 
     # Criar o gráfico de barras
+    ax = pred_counts.plot(kind='bar', color=colors, edgecolor='black')
     plt.figure(figsize=(6, 4))
     pred_counts.plot(kind='bar')
     plt.ylabel("Quantidade")
