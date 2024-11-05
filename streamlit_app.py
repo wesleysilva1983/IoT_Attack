@@ -67,6 +67,9 @@ with open("matriz_confusao.py") as f:
 with open("model.py") as f:
     exec(f.read())
 
+with open("comparar_classes.py") as f:
+    exec(f.read())
+
 st.markdown("""
 **Referência:** 
 
