@@ -29,7 +29,7 @@ def plot_prediction_distribution(predictions):
     # Criar o gráfico de barras
     ax = pred_counts.plot(kind='bar', color=colors, edgecolor='black')
     #plt.title("Distribuição das Predições por Classe", fontsize=16, weight='bold')
-    plt.xlabel("Classe", fontsize=14)
+    #plt.xlabel("Classe", fontsize=14)
     plt.ylabel("Quantidade", fontsize=14)
     plt.xticks(rotation=45, fontsize=12)
     plt.yticks(fontsize=12)
